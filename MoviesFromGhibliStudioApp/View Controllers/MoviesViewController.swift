@@ -52,11 +52,12 @@ extension MoviesViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = movieTableView.dequeueReusableCell(withIdentifier: "MovieCustomCell", for: indexPath) as? MovieCustomCellTableViewCell else {return UITableViewCell()}
+    guard let cell = movieTableView.dequeueReusableCell(withIdentifier: "moviesCustomCell", for: indexPath) as? MoviesCustomCell else {return UITableViewCell()}
     
     let currentMovie = ghibliMovies[indexPath.row]
     cell.movieTitle.text = currentMovie.title
-    cell.movieReleaseDate.text = currentMovie.release_date
+    
+    cell.movieImage.image = ImageSetter.setPicture(str: currentMovie.title)
     
     return cell
   }
@@ -65,7 +66,8 @@ extension MoviesViewController: UITableViewDataSource {
 
 extension MoviesViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 200 
+    return 150
     
   }
 }
+
