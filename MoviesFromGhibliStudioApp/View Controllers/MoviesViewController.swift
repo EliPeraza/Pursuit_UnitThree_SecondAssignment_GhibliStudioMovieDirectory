@@ -11,6 +11,7 @@ import UIKit
 class MoviesViewController: UIViewController {
   
 
+  @IBOutlet weak var searchBar: UISearchBar!
   
   @IBOutlet weak var movieTableView: UITableView!
   
@@ -24,7 +25,9 @@ class MoviesViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     movieTableView.dataSource = self
+    movieTableView.delegate = self 
     getMovieData()
+    searchBar.delegate = self
     dump(ghibliMovies)
 
   }
@@ -41,7 +44,6 @@ class MoviesViewController: UIViewController {
       }
     }
   }
-  
   
 }
 
@@ -67,7 +69,30 @@ extension MoviesViewController: UITableViewDataSource {
 extension MoviesViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 150
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+    guard let vc = storyboard.instantiateViewController(withIdentifier: "selectedMovieDetails") as? GhilbiMovieDetailedViewController else {return}
+    
+    vc.modalPresentationStyle = .overCurrentContext
+    vc.selectedMovieDetails = ghibliMovies[indexPath.row]
+    
+    present(vc, animated: true, completion: nil)
     
   }
+}
+
+extension MoviesViewController: UISearchBarDelegate {
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.resignFirstResponder()
+    
+    guard let searchText = searchBar.text else {return}
+    
+    ghibliMovies = ghibliMovies.filter{$0.title.lowercased().contains(searchText.lowercased())}
+    
+  }
+  
+  
 }
 

@@ -112,6 +112,7 @@
                     <tabBarItem key="tabBarItem" title="Item 1" id="HUl-OO-TpS"/>
                     <connections>
                         <outlet property="movieTableView" destination="iGh-rM-QnK" id="nlH-6c-dDG"/>
+                        <outlet property="searchBar" destination="G0P-D4-I16" id="QwT-h1-J9D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRy-gQ-Jeg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -121,17 +122,69 @@
         <!--Ghilbi Movie Detailed View Controller-->
         <scene sceneID="h4N-XK-csH">
             <objects>
-                <viewController id="48c-2x-Yqf" customClass="GhilbiMovieDetailedViewController" customModule="MoviesFromGhibliStudioApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selectedMovieDetails" id="48c-2x-Yqf" customClass="GhilbiMovieDetailedViewController" customModule="MoviesFromGhibliStudioApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2mg-vI-6vr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="df1-73-dyU">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpf-AZ-sxt">
+                                <rect key="frame" x="19" y="43.5" width="337.5" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yu0-g4-ycy">
+                                <rect key="frame" x="69.5" y="56" width="236" height="300"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZSS-le-UQx">
+                                <rect key="frame" x="35.5" y="395" width="304" height="240.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntf-wj-e5I">
+                                <rect key="frame" x="50" y="364" width="275" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.61220142209999995" green="0.12855249639999999" blue="0.42261570859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Yu0-g4-ycy" firstAttribute="centerX" secondItem="zpf-AZ-sxt" secondAttribute="centerX" id="0aA-3A-Tep"/>
+                            <constraint firstItem="df1-73-dyU" firstAttribute="centerX" secondItem="lbh-gl-glQ" secondAttribute="centerX" id="2q9-3z-s9c"/>
+                            <constraint firstItem="ZSS-le-UQx" firstAttribute="centerY" secondItem="zpf-AZ-sxt" secondAttribute="centerY" multiplier="1.5" id="67l-y7-ugZ"/>
+                            <constraint firstItem="ntf-wj-e5I" firstAttribute="top" secondItem="Yu0-g4-ycy" secondAttribute="bottom" constant="8" id="8P3-gH-unK"/>
+                            <constraint firstItem="zpf-AZ-sxt" firstAttribute="centerX" secondItem="df1-73-dyU" secondAttribute="centerX" id="C0n-WW-kxi"/>
+                            <constraint firstItem="ZSS-le-UQx" firstAttribute="width" secondItem="zpf-AZ-sxt" secondAttribute="width" multiplier="0.9" id="EHi-NS-x8M"/>
+                            <constraint firstItem="df1-73-dyU" firstAttribute="width" secondItem="2mg-vI-6vr" secondAttribute="width" id="P7u-PS-OKL"/>
+                            <constraint firstItem="Yu0-g4-ycy" firstAttribute="width" secondItem="zpf-AZ-sxt" secondAttribute="width" multiplier="0.7" id="PjS-m2-MUu"/>
+                            <constraint firstItem="ZSS-le-UQx" firstAttribute="centerX" secondItem="zpf-AZ-sxt" secondAttribute="centerX" id="VwV-uM-Kai"/>
+                            <constraint firstItem="ntf-wj-e5I" firstAttribute="leading" secondItem="lbh-gl-glQ" secondAttribute="leading" constant="50" id="XU4-Ot-p9N"/>
+                            <constraint firstItem="ZSS-le-UQx" firstAttribute="height" secondItem="zpf-AZ-sxt" secondAttribute="height" multiplier="0.4" id="YVA-SJ-u7a"/>
+                            <constraint firstItem="lbh-gl-glQ" firstAttribute="trailing" secondItem="ntf-wj-e5I" secondAttribute="trailing" constant="50" id="YhE-jv-wHm"/>
+                            <constraint firstItem="Yu0-g4-ycy" firstAttribute="centerY" secondItem="zpf-AZ-sxt" secondAttribute="centerY" multiplier="0.6" id="aZ0-NO-evg"/>
+                            <constraint firstItem="Yu0-g4-ycy" firstAttribute="height" secondItem="zpf-AZ-sxt" secondAttribute="height" multiplier="0.5" id="gfI-3v-Tdx"/>
+                            <constraint firstItem="zpf-AZ-sxt" firstAttribute="width" secondItem="df1-73-dyU" secondAttribute="width" multiplier="0.9" id="jJi-Rm-CTX"/>
+                            <constraint firstItem="zpf-AZ-sxt" firstAttribute="height" secondItem="df1-73-dyU" secondAttribute="height" multiplier="0.9" id="jdg-um-usj"/>
+                            <constraint firstItem="df1-73-dyU" firstAttribute="height" secondItem="2mg-vI-6vr" secondAttribute="height" id="q4d-q5-fH2"/>
+                            <constraint firstItem="zpf-AZ-sxt" firstAttribute="centerY" secondItem="df1-73-dyU" secondAttribute="centerY" id="vfU-hN-Nyx"/>
+                            <constraint firstItem="df1-73-dyU" firstAttribute="centerY" secondItem="lbh-gl-glQ" secondAttribute="centerY" id="zx4-SA-Qhs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lbh-gl-glQ"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundButton" destination="df1-73-dyU" id="caz-Ws-RUL"/>
+                        <outlet property="directorAndDate" destination="ntf-wj-e5I" id="vBg-XG-qpv"/>
+                        <outlet property="imageDetailed" destination="Yu0-g4-ycy" id="clX-2F-ScE"/>
+                        <outlet property="movieDescription" destination="ZSS-le-UQx" id="tVR-xU-Z3g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZC-uE-PIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074" y="-743"/>
+            <point key="canvasLocation" x="1072.8" y="-743.47826086956525"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hSu-wJ-QAy">
