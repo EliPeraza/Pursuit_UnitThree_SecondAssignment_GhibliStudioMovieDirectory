@@ -9,7 +9,7 @@
 import UIKit
 
 class GhilbiMovieDetailedViewController: UIViewController {
-
+  
   var selectedMovieDetails: GhilbiStudioMovies!
   
   @IBOutlet weak var backgroundButton: UIButton!
@@ -20,16 +20,21 @@ class GhilbiMovieDetailedViewController: UIViewController {
   
   @IBOutlet weak var movieDescription: UITextView!
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      setDetailedInfo()
-
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setDetailedInfo()
+    
+  }
   
   func setDetailedInfo(){
-   
+ 
   }
   
   
-
+  @IBAction func dismissButton(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+  }
+  
+  
+  
 }

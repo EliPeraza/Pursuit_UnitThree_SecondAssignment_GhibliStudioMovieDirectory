@@ -11,9 +11,6 @@ import Foundation
 //this data is an array of dictionaries
 struct GhilbiStudioMovies: Codable {
   
-//  struct MovieInfo{
-//    let arrayOfMovieInfo: [GhilbiStudioMovies]
-//  }
   
   let title: String
   let description: String

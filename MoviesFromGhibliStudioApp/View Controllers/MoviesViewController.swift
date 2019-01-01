@@ -10,15 +10,15 @@ import UIKit
 
 class MoviesViewController: UIViewController {
   
-
+  
   @IBOutlet weak var searchBar: UISearchBar!
   
   @IBOutlet weak var movieTableView: UITableView!
   
-
+  
   private var ghibliMovies = [GhilbiStudioMovies]() {
     didSet{
-     self.movieTableView.reloadData()
+      self.movieTableView.reloadData()
     }
   }
   
@@ -26,10 +26,10 @@ class MoviesViewController: UIViewController {
     super.viewDidLoad()
     movieTableView.dataSource = self
     movieTableView.delegate = self 
-    getMovieData()
     searchBar.delegate = self
+    getMovieData()
     dump(ghibliMovies)
-
+    
   }
   
   func getMovieData() {
@@ -73,12 +73,16 @@ extension MoviesViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
     let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-    guard let vc = storyboard.instantiateViewController(withIdentifier: "selectedMovieDetails") as? GhilbiMovieDetailedViewController else {return}
+    guard let detailedViewController = storyboard.instantiateViewController(withIdentifier: "selectedMovieDetails") as? GhilbiMovieDetailedViewController else {return}
     
-    vc.modalPresentationStyle = .overCurrentContext
-    vc.selectedMovieDetails = ghibliMovies[indexPath.row]
+    detailedViewController.modalPresentationStyle = .overCurrentContext
+    detailedViewController.selectedMovieDetails = ghibliMovies[indexPath.row]
     
-    present(vc, animated: true, completion: nil)
+    present(detailedViewController, animated: true, completion: nil)
+    
+    print("this is the index path \(indexPath)")
+    print("this is the index path \(indexPath.row)")
+    
     
   }
 }
