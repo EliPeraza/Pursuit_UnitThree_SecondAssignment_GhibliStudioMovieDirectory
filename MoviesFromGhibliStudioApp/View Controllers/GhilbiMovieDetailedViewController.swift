@@ -22,15 +22,15 @@ class GhilbiMovieDetailedViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setDetailedInfo()
-    
+    dump(selectedMovieDetails)
+    if let movieDesc = selectedMovieDetails {
+     movieDescription.text = movieDesc.description
+    } else {
+      movieDescription.text = "nothing nothing"
+    }
   }
   
-  func setDetailedInfo(){
- 
-  }
-  
-  
+
   @IBAction func dismissButton(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }

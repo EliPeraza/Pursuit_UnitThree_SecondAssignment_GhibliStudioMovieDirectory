@@ -11,9 +11,9 @@ import Foundation
 //this is an array of dictionaries
 struct GhilbiStudioCharacters: Codable {
   
-  let name: String
-  let gender: String
-  let age: String
-  let species: String // how do I get access to the species 
+  let name: String?
+  let gender: String?
+  let age: String?
+  let species: String // how do I get access to the species
   
 }
