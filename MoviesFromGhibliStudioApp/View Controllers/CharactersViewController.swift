@@ -10,6 +10,9 @@ import UIKit
 
 class CharactersViewController: UIViewController {
 
+  
+  @IBOutlet weak var characterSeachBar: UISearchBar!
+  
   @IBOutlet weak var characterTableView: UITableView!
   
   private var ghibliCharacters = [GhilbiStudioCharacters]() {
@@ -24,6 +27,7 @@ class CharactersViewController: UIViewController {
       getCharacterInfo()
       dump(ghibliCharacters)
       characterTableView.dataSource = self
+//      characterSeachBar.delegate = self
     }
     
 
@@ -62,3 +66,18 @@ extension CharactersViewController: UITableViewDataSource{
   }
   
 }
+
+//
+//extension CharactersViewController: UISearchBarDelegate {
+//
+//  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//    searchBar.resignFirstResponder()
+//
+//    guard let searchText = searchBar.text else {return}
+//
+//
+//
+//
+//}
+
+//}

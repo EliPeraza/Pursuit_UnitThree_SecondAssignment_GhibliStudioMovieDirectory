@@ -12,29 +12,43 @@ class GhilbiMovieDetailedViewController: UIViewController {
   
   var selectedMovieDetails: GhilbiStudioMovies!
   
-  @IBOutlet weak var backgroundButton: UIButton!
   
   @IBOutlet weak var imageDetailed: UIImageView!
   
-  @IBOutlet weak var directorAndDate: UILabel!
+  @IBOutlet weak var director: UILabel!
+  
+  
+  @IBOutlet weak var releaseDate: UILabel!
   
   @IBOutlet weak var movieDescription: UITextView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    setDataInDetailedMovieController()
     dump(selectedMovieDetails)
+   
+  }
+  
+  func setDataInDetailedMovieController(){
     if let movieDesc = selectedMovieDetails {
-     movieDescription.text = movieDesc.description
+      movieDescription.text = movieDesc.description
     } else {
       movieDescription.text = "nothing nothing"
     }
+    
+    director.text = "Director: \(selectedMovieDetails.director) "
+    
+    imageDetailed.image = ImageSetter.setPicture(str: selectedMovieDetails.title)
+    
+    if let date = selectedMovieDetails.release_date{
+    releaseDate.text = "Release year: \(date)"
+      
+    } else {
+      releaseDate.text = "Release year: unknown"
+    }
+    
   }
-  
 
-  @IBAction func dismissButton(_ sender: Any) {
-    dismiss(animated: true, completion: nil)
-  }
-  
   
   
 }

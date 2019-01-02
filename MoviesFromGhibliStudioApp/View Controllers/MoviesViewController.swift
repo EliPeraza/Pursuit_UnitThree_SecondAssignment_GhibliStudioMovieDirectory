@@ -22,6 +22,7 @@ class MoviesViewController: UIViewController {
     }
   }
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     movieTableView.dataSource = self
@@ -44,6 +45,15 @@ class MoviesViewController: UIViewController {
       }
     }
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let indexPath = movieTableView.indexPathForSelectedRow,
+      let detailedVC = segue.destination as? GhilbiMovieDetailedViewController else {fatalError("There is a problem with the segue indexPath or segue")}
+    
+    let currentMovie = ghibliMovies[indexPath.row]
+    detailedVC.selectedMovieDetails = currentMovie
+  }
+  
   
 }
 
@@ -71,20 +81,6 @@ extension MoviesViewController: UITableViewDelegate {
     return 150
   }
   
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-    guard let detailedViewController = storyboard.instantiateViewController(withIdentifier: "selectedMovieDetails") as? GhilbiMovieDetailedViewController else {return}
-    
-    detailedViewController.modalPresentationStyle = .overCurrentContext
-    detailedViewController.selectedMovieDetails = ghibliMovies[indexPath.row]
-    
-    present(detailedViewController, animated: true, completion: nil)
-    
-    print("this is the index path \(indexPath)")
-    print("this is the index path \(indexPath.row)")
-    
-    
-  }
 }
 
 extension MoviesViewController: UISearchBarDelegate {
@@ -93,9 +89,18 @@ extension MoviesViewController: UISearchBarDelegate {
     
     guard let searchText = searchBar.text else {return}
     
-    ghibliMovies = ghibliMovies.filter{$0.title.lowercased().contains(searchText.lowercased())}
+//    var backupGhibliMovie = ghibliMovies
     
+    if searchText == "" {
+      _ = getMovieData()
+      movieTableView.reloadData()
+    } else {
+     ghibliMovies = ghibliMovies.filter{$0.title.lowercased().contains(searchText.lowercased())}
+    }
+      
+   
   }
+  
   
   
 }
