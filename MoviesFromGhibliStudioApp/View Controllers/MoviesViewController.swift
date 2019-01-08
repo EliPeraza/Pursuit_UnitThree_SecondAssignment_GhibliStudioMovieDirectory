@@ -22,6 +22,8 @@ class MoviesViewController: UIViewController {
     }
   }
   
+  var isSearching = false
+  var arrayForSearch = [GhilbiStudioMovies]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,7 +31,6 @@ class MoviesViewController: UIViewController {
     movieTableView.delegate = self 
     searchBar.delegate = self
     getMovieData()
-    dump(ghibliMovies)
     
   }
   
@@ -41,6 +42,7 @@ class MoviesViewController: UIViewController {
         }
         if let data = data {
           self.ghibliMovies = data
+          self.arrayForSearch = data
         }
       }
     }
@@ -68,7 +70,6 @@ extension MoviesViewController: UITableViewDataSource {
     
     let currentMovie = ghibliMovies[indexPath.row]
     cell.movieTitle.text = currentMovie.title
-    
     cell.movieImage.image = ImageSetter.setPicture(str: currentMovie.title)
     
     return cell
@@ -78,30 +79,23 @@ extension MoviesViewController: UITableViewDataSource {
 
 extension MoviesViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 150
+    return 200
   }
   
 }
 
 extension MoviesViewController: UISearchBarDelegate {
-  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-    searchBar.resignFirstResponder()
-    
-    guard let searchText = searchBar.text else {return}
-    
-//    var backupGhibliMovie = ghibliMovies
-    
+  
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     if searchText == "" {
-      _ = getMovieData()
-      movieTableView.reloadData()
-    } else {
-     ghibliMovies = ghibliMovies.filter{$0.title.lowercased().contains(searchText.lowercased())}
-    }
-      
-   
+            _ = getMovieData()
+            movieTableView.reloadData()
+          } else {
+      ghibliMovies = ghibliMovies.filter({$0.title.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        
+        movieTableView.reloadData()
+          }
   }
-  
-  
   
 }
 

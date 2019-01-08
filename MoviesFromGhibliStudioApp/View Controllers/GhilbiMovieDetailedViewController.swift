@@ -12,6 +12,7 @@ class GhilbiMovieDetailedViewController: UIViewController {
   
   var selectedMovieDetails: GhilbiStudioMovies!
   
+  var favoriteMoviesVC = UIViewController()
   
   @IBOutlet weak var imageDetailed: UIImageView!
   
@@ -22,8 +23,12 @@ class GhilbiMovieDetailedViewController: UIViewController {
   
   @IBOutlet weak var movieDescription: UITextView!
   
+  
+  @IBOutlet weak var addButton: UIBarButtonItem!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = selectedMovieDetails.title
     setDataInDetailedMovieController()
     dump(selectedMovieDetails)
    
@@ -49,6 +54,24 @@ class GhilbiMovieDetailedViewController: UIViewController {
     
   }
 
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let favVC = segue.destination as? MoviesWeWantToWatchViewController {
+      favoriteMoviesVC = favVC
+      
+    } else {
+     print("Can't segue")
+    }
+    
+  }
   
+  
+  @IBAction func addMovieToFav(_ sender: UIBarButtonItem) {
+   
+    if sender.isEnabled {
+     GhilbiStudioMovies.getFavorites(movie: selectedMovieDetails)
+    }
+  
+  }
+
   
 }

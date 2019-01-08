@@ -18,6 +18,14 @@ struct GhilbiStudioMovies: Codable {
   let release_date: String?
   let rt_score: String 
   
+  
+  static public func getFavorites(movie: GhilbiStudioMovies) -> [GhilbiStudioMovies] {
+    var arrayOfFavorites = [GhilbiStudioMovies]()
+    
+    arrayOfFavorites.append(movie)
+    
+    return arrayOfFavorites
+  }
 }
 
 

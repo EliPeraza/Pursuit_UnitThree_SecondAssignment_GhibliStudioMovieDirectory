@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0DE64521E2C941009EDC52 /* MoviesWeWantToWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0DE64421E2C941009EDC52 /* MoviesWeWantToWatchViewController.swift */; };
+		1E0DE64C21E2D1DD009EDC52 /* MoviesToWatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0DE64B21E2D1DD009EDC52 /* MoviesToWatchTableViewCell.swift */; };
+		1E0DE64E21E3B14A009EDC52 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0DE64D21E3B14A009EDC52 /* Favorites.swift */; };
 		1E47121521D579560029CA58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47121421D579560029CA58 /* AppDelegate.swift */; };
 		1E47121A21D579560029CA58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E47121821D579560029CA58 /* Main.storyboard */; };
 		1E47121C21D5795A0029CA58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E47121B21D5795A0029CA58 /* Assets.xcassets */; };
 		1E47121F21D5795A0029CA58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E47121D21D5795A0029CA58 /* LaunchScreen.storyboard */; };
 		1E47122721D5809D0029CA58 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47122621D5809D0029CA58 /* MoviesViewController.swift */; };
-		1E47122921D580B90029CA58 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47122821D580B90029CA58 /* CharactersViewController.swift */; };
 		1E47122B21D584280029CA58 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47122A21D584280029CA58 /* MovieModel.swift */; };
-		1E47122D21D5843F0029CA58 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47122C21D5843F0029CA58 /* CharacterModel.swift */; };
-		1E47123121D5848C0029CA58 /* NetworkAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47123021D5848C0029CA58 /* NetworkAssistant.swift */; };
 		1E47123321D584A70029CA58 /* GhilbiMovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47123221D584A70029CA58 /* GhilbiMovieAPI.swift */; };
-		1E47123521D584B70029CA58 /* GhilbiCharacterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47123421D584B70029CA58 /* GhilbiCharacterAPI.swift */; };
 		1E47123921D685CB0029CA58 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47123821D685CB0029CA58 /* AppError.swift */; };
 		1E47123B21D68E970029CA58 /* GhilbiMovieDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47123A21D68E970029CA58 /* GhilbiMovieDetailedViewController.swift */; };
 		1ED0E3A321DAB4A2005BBB90 /* MoviesCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED0E3A221DAB4A2005BBB90 /* MoviesCustomCell.swift */; };
@@ -25,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E0DE64421E2C941009EDC52 /* MoviesWeWantToWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesWeWantToWatchViewController.swift; sourceTree = "<group>"; };
+		1E0DE64B21E2D1DD009EDC52 /* MoviesToWatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesToWatchTableViewCell.swift; sourceTree = "<group>"; };
+		1E0DE64D21E3B14A009EDC52 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		1E47121121D579560029CA58 /* MoviesFromGhibliStudioApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesFromGhibliStudioApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E47121421D579560029CA58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E47121921D579560029CA58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,12 +34,8 @@
 		1E47121E21D5795A0029CA58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E47122021D5795A0029CA58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E47122621D5809D0029CA58 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
-		1E47122821D580B90029CA58 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		1E47122A21D584280029CA58 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
-		1E47122C21D5843F0029CA58 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
-		1E47123021D5848C0029CA58 /* NetworkAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAssistant.swift; sourceTree = "<group>"; };
 		1E47123221D584A70029CA58 /* GhilbiMovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhilbiMovieAPI.swift; sourceTree = "<group>"; };
-		1E47123421D584B70029CA58 /* GhilbiCharacterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhilbiCharacterAPI.swift; sourceTree = "<group>"; };
 		1E47123821D685CB0029CA58 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		1E47123A21D68E970029CA58 /* GhilbiMovieDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhilbiMovieDetailedViewController.swift; sourceTree = "<group>"; };
 		1ED0E3A221DAB4A2005BBB90 /* MoviesCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCustomCell.swift; sourceTree = "<group>"; };
@@ -55,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E0DE64A21E2D125009EDC52 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1ED0E3A221DAB4A2005BBB90 /* MoviesCustomCell.swift */,
+				1E0DE64B21E2D1DD009EDC52 /* MoviesToWatchTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1E47120821D579560029CA58 = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +83,7 @@
 			children = (
 				1E47121821D579560029CA58 /* Main.storyboard */,
 				1ED0E3A421DABEEE005BBB90 /* ImageHelper.swift */,
-				1ED0E3A221DAB4A2005BBB90 /* MoviesCustomCell.swift */,
+				1E0DE64A21E2D125009EDC52 /* Views */,
 				1E47123621D584E20029CA58 /* NetworkDataFile */,
 				1E47122F21D584690029CA58 /* Models */,
 				1E47122E21D584560029CA58 /* View Controllers */,
@@ -89,9 +96,9 @@
 		1E47122E21D584560029CA58 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1E47122821D580B90029CA58 /* CharactersViewController.swift */,
 				1E47122621D5809D0029CA58 /* MoviesViewController.swift */,
 				1E47123A21D68E970029CA58 /* GhilbiMovieDetailedViewController.swift */,
+				1E0DE64421E2C941009EDC52 /* MoviesWeWantToWatchViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -99,8 +106,8 @@
 		1E47122F21D584690029CA58 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1E47122C21D5843F0029CA58 /* CharacterModel.swift */,
 				1E47122A21D584280029CA58 /* MovieModel.swift */,
+				1E0DE64D21E3B14A009EDC52 /* Favorites.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -108,10 +115,8 @@
 		1E47123621D584E20029CA58 /* NetworkDataFile */ = {
 			isa = PBXGroup;
 			children = (
-				1E47123421D584B70029CA58 /* GhilbiCharacterAPI.swift */,
 				1E47123221D584A70029CA58 /* GhilbiMovieAPI.swift */,
 				1E47123821D685CB0029CA58 /* AppError.swift */,
-				1E47123021D5848C0029CA58 /* NetworkAssistant.swift */,
 			);
 			path = NetworkDataFile;
 			sourceTree = "<group>";
@@ -197,17 +202,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E0DE64521E2C941009EDC52 /* MoviesWeWantToWatchViewController.swift in Sources */,
+				1E0DE64C21E2D1DD009EDC52 /* MoviesToWatchTableViewCell.swift in Sources */,
 				1E47123B21D68E970029CA58 /* GhilbiMovieDetailedViewController.swift in Sources */,
 				1E47122B21D584280029CA58 /* MovieModel.swift in Sources */,
-				1E47123521D584B70029CA58 /* GhilbiCharacterAPI.swift in Sources */,
 				1ED0E3A321DAB4A2005BBB90 /* MoviesCustomCell.swift in Sources */,
 				1E47123921D685CB0029CA58 /* AppError.swift in Sources */,
 				1E47123321D584A70029CA58 /* GhilbiMovieAPI.swift in Sources */,
-				1E47122D21D5843F0029CA58 /* CharacterModel.swift in Sources */,
 				1E47121521D579560029CA58 /* AppDelegate.swift in Sources */,
+				1E0DE64E21E3B14A009EDC52 /* Favorites.swift in Sources */,
 				1E47122721D5809D0029CA58 /* MoviesViewController.swift in Sources */,
-				1E47122921D580B90029CA58 /* CharactersViewController.swift in Sources */,
-				1E47123121D5848C0029CA58 /* NetworkAssistant.swift in Sources */,
 				1ED0E3A521DABEEE005BBB90 /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
