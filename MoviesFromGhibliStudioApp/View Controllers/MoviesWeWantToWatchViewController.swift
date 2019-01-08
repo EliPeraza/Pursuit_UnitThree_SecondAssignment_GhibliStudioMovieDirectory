@@ -77,7 +77,15 @@ extension MoviesWeWantToWatchViewController: UITableViewDataSource {
 extension MoviesWeWantToWatchViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
     return 250
-    
   }
+  
+//  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//
+//
+//    let article = "http://ufc-data-api.ufc.com/api/v3/iphone/news/\(articles[indexPath.row].id)"
+//    guard let url = URL(string: article) else {return}
+//    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//  }
 }
 

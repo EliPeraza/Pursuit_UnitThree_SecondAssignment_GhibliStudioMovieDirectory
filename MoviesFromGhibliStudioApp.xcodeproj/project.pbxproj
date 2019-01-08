@@ -12,6 +12,8 @@
 		1E0DE64E21E3B14A009EDC52 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0DE64D21E3B14A009EDC52 /* Favorites.swift */; };
 		1E0DE65021E44668009EDC52 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0DE64F21E44668009EDC52 /* NetworkHelper.swift */; };
 		1E0DE65221E44E90009EDC52 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0DE65121E44E90009EDC52 /* Constants.swift */; };
+		1E0DE65521E46101009EDC52 /* IntroPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0DE65421E46101009EDC52 /* IntroPageController.swift */; };
+		1E0DE65721E46359009EDC52 /* PhotoCredits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1E0DE65621E46359009EDC52 /* PhotoCredits.rtf */; };
 		1E47121521D579560029CA58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47121421D579560029CA58 /* AppDelegate.swift */; };
 		1E47121A21D579560029CA58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E47121821D579560029CA58 /* Main.storyboard */; };
 		1E47121C21D5795A0029CA58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E47121B21D5795A0029CA58 /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		1E0DE64D21E3B14A009EDC52 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		1E0DE64F21E44668009EDC52 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		1E0DE65121E44E90009EDC52 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1E0DE65421E46101009EDC52 /* IntroPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageController.swift; sourceTree = "<group>"; };
+		1E0DE65621E46359009EDC52 /* PhotoCredits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = PhotoCredits.rtf; sourceTree = "<group>"; };
 		1E47121121D579560029CA58 /* MoviesFromGhibliStudioApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesFromGhibliStudioApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E47121421D579560029CA58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E47121921D579560029CA58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				1E47121821D579560029CA58 /* Main.storyboard */,
-				1ED0E3A421DABEEE005BBB90 /* ImageHelper.swift */,
 				1E0DE64A21E2D125009EDC52 /* Views */,
 				1E47123621D584E20029CA58 /* NetworkDataFile */,
 				1E47122F21D584690029CA58 /* Models */,
@@ -111,6 +114,7 @@
 				1E47122621D5809D0029CA58 /* MoviesViewController.swift */,
 				1E47123A21D68E970029CA58 /* GhilbiMovieDetailedViewController.swift */,
 				1E0DE64421E2C941009EDC52 /* MoviesWeWantToWatchViewController.swift */,
+				1E0DE65421E46101009EDC52 /* IntroPageController.swift */,
 				1E0DE65321E44E9F009EDC52 /* Utilities */,
 			);
 			path = "View Controllers";
@@ -129,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				1E47123221D584A70029CA58 /* GhilbiMovieAPI.swift */,
+				1ED0E3A421DABEEE005BBB90 /* ImageHelper.swift */,
 				1E47123821D685CB0029CA58 /* AppError.swift */,
 				1E0DE64F21E44668009EDC52 /* NetworkHelper.swift */,
 			);
@@ -139,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				1E47121B21D5795A0029CA58 /* Assets.xcassets */,
+				1E0DE65621E46359009EDC52 /* PhotoCredits.rtf */,
 				1E47121421D579560029CA58 /* AppDelegate.swift */,
 				1E47121D21D5795A0029CA58 /* LaunchScreen.storyboard */,
 			);
@@ -205,6 +211,7 @@
 			files = (
 				1E47121F21D5795A0029CA58 /* LaunchScreen.storyboard in Resources */,
 				1E47121C21D5795A0029CA58 /* Assets.xcassets in Resources */,
+				1E0DE65721E46359009EDC52 /* PhotoCredits.rtf in Resources */,
 				1E47121A21D579560029CA58 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +232,7 @@
 				1E47123921D685CB0029CA58 /* AppError.swift in Sources */,
 				1E0DE65221E44E90009EDC52 /* Constants.swift in Sources */,
 				1E47123321D584A70029CA58 /* GhilbiMovieAPI.swift in Sources */,
+				1E0DE65521E46101009EDC52 /* IntroPageController.swift in Sources */,
 				1E47121521D579560029CA58 /* AppDelegate.swift in Sources */,
 				1E0DE64E21E3B14A009EDC52 /* Favorites.swift in Sources */,
 				1E47122721D5809D0029CA58 /* MoviesViewController.swift in Sources */,
