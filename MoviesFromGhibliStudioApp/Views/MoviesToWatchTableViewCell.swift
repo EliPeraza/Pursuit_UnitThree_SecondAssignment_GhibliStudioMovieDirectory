@@ -11,10 +11,9 @@ import UIKit
 class MoviesToWatchTableViewCell: UITableViewCell {
 
   
-  @IBOutlet weak var movieImageButton: UIButton!
   
+  @IBOutlet weak var favImage: UIImageView!
   
-  @IBOutlet weak var favMovieName: UILabel!
   
   
 }

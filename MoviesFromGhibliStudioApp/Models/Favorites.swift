@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct FavoriteMovies: Codable {
+  
+  let title: String
+  let description: String
+  let director: String
+  let release_date: String
+  let rt_score: String
+
+}

@@ -18,14 +18,16 @@ class MoviesViewController: UIViewController {
   
   private var ghibliMovies = [GhilbiStudioMovies]() {
     didSet{
-      self.movieTableView.reloadData()
+      DispatchQueue.main.async {
+        self.movieTableView.reloadData()
+      }
     }
   }
   
-  var isSearching = false
-  var arrayForSearch = [GhilbiStudioMovies]()
+
   
   override func viewDidLoad() {
+    title = "Studio Ghibli Movies"
     super.viewDidLoad()
     movieTableView.dataSource = self
     movieTableView.delegate = self 
@@ -34,19 +36,17 @@ class MoviesViewController: UIViewController {
     
   }
   
-  func getMovieData() {
-    GhilbiMovieAPI.getMovieInfo(keyword: "films") { (error, data) in
-      DispatchQueue.main.async {
-        if let error = error {
-          print(error)
-        }
-        if let data = data {
-          self.ghibliMovies = data
-          self.arrayForSearch = data
-        }
+  private func getMovieData() {
+    GhibliMovieAPI.searchGhibliMovies(keyword: "films") { (appError, ghibliMovies) in
+      if let appError = appError {
+        print(appError.errorMessage())
+      } else if let ghibliMovies = ghibliMovies {
+        self.ghibliMovies = ghibliMovies
       }
     }
-  }
+      
+    }
+ 
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let indexPath = movieTableView.indexPathForSelectedRow,
